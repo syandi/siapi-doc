@@ -429,6 +429,23 @@
               </ul>
           </li>
           <li>
+            <a href="#admin-complain" class="toc-h1 toc-link" data-title="[Admin] Complain">[Admin] Complain</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-semua-komplain-toko" class="toc-h2 toc-link" data-title="Get Semua Komplain Toko">Get Semua Komplain Toko</a>
+                  </li>
+                  <li>
+                    <a href="#get-komplain-toko-berdasarkan-id" class="toc-h2 toc-link" data-title="Get Komplain Toko berdasarkan ID">Get Komplain Toko berdasarkan ID</a>
+                  </li>
+                  <li>
+                    <a href="#post-komplain-baru" class="toc-h2 toc-link" data-title="POST Komplain baru">POST Komplain baru</a>
+                  </li>
+                  <li>
+                    <a href="#put-status-komplain" class="toc-h2 toc-link" data-title="PUT status komplain">PUT status komplain</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -2161,6 +2178,140 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <td>null</td>
 <td>true</td>
 <td>tanggal</td>
+</tr>
+</tbody></table>
+<h1 id='admin-complain'>[Admin] Complain</h1><h2 id='get-semua-komplain-toko'>Get Semua Komplain Toko</h2>
+<blockquote>
+<p>jenis: admin</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5FEAABAB83B81"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"komplain 1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"school_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4BB64007-F3F0-3C97-AF26-4FF94EBC52C4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-02T08:15:29.000000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customer_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">....</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Komplain.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/admin/complains</code></p>
+<h2 id='get-komplain-toko-berdasarkan-id'>Get Komplain Toko berdasarkan ID</h2>
+<blockquote>
+<p>jenis: admin</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5FEAABAB83B81"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"komplain 1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"school_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4BB64007-F3F0-3C97-AF26-4FF94EBC52C4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-02T08:15:29.000000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"merchant_complain_history"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">...</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Komplain berdasarkan ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/admin/complains/{complain}</code></p>
+<h2 id='post-komplain-baru'>POST Komplain baru</h2>
+<blockquote>
+<p>jenis: admin</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk menambah pesan pada komplain.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/admin/complains/{complain}</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
+</tr>
+</tbody></table>
+<h2 id='put-status-komplain'>PUT status komplain</h2>
+<blockquote>
+<p>jenis: admin</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mengubah status komplain.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://staging.siapi.tokoladang.co.id/admin/complains/{complain}</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
